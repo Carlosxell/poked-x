@@ -1,0 +1,6 @@
+@import '_variables';
+
+@keyframes load {
+  from { left: pxToRem(-160); }
+  to   { left: 100%; }
+}

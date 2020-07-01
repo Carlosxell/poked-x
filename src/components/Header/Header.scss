@@ -1,0 +1,29 @@
+@import '../../assets/css/_utilities/_exports';
+
+.header {
+  background-color: $color-danger;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  &_content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    max-width: pxToRem(992);
+    margin: auto;
+    height: pxToRem(64);
+    padding: 0 pxToRem(12);
+  }
+
+  &_title {
+    color: $color-yellow;
+    font-size: pxToRem(24);
+    font-weight: 600;
+    letter-spacing: pxToRem(1.4);
+    text-align: center;
+    text-shadow: pxToRem(2) pxToRem(2) pxToRem(4) $color-blue;
+  }
+}

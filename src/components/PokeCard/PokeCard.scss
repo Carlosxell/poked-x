@@ -1,0 +1,63 @@
+@import '../../assets/css/_utilities/_exports';
+
+.pokecard {
+  background-color: $color-dark3;
+  border-radius: pxToRem(6);
+  margin: 0 0 pxToRem(20);
+  min-height: pxToRem(172);
+
+  &_content {}
+
+  &_box {
+    position: relative;
+    text-align: center;
+  }
+
+  &_img {
+    object-fit: contain;
+
+    &:before {
+      background-color: $color-dark3;
+      content: "Carregando: " attr(alt);
+      display: inline-block;
+      left: 0;
+      min-width: 120px;
+      margin: auto;
+      padding: pxToRem(14) 0;
+      position: absolute;
+      right: 0;
+      width: 100%;
+      z-index: 10;
+    }
+  }
+
+  &_info {
+    &_title {
+      font-size: pxToRem(18);
+      font-weight: 600;
+      text-transform: capitalize;
+      text-shadow:0 pxToRem(2) pxToRem(2) $color-black;
+    }
+  }
+
+  &--loading {
+    overflow: hidden;
+    position: relative;
+
+    .pokecard_content {
+      display: none;
+    }
+
+    &:before {
+      animation: load 1s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+      background: linear-gradient(to right, transparent 0%, $color-gray2 50%, transparent 100%);
+      content: '';
+      display: block;
+      height: 100%;
+      left: pxToRem(-160);
+      position: absolute;
+      top: 0;
+      width: pxToRem(160);
+    }
+  }
+}
